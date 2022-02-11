@@ -1,2 +1,2 @@
 export const EXCHANGE_API_URL =
-  "http://api.currencylayer.com/live?access_key=8c38ebcb39cff7ea5acf4ba6cb2da569";
+  "http://api.currencylayer.com/live?access_key=c97308eb815f638eccbd7f3ab8a1d555";
