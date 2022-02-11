@@ -1,8 +1,14 @@
 import axios from "axios";
-import { EXCHANGE_API_URL } from "./constants";
 
 export const getApi = async () => {
-  const response = await axios.get(EXCHANGE_API_URL);
+  const proxyAddress =
+    "https://sixted-proxy-cors-anywhere.herokuapp.com/" +
+    "http://api.currencylayer.com/live?access_key=" +
+    process.env.REACT_APP_CURRENCYLAYER_API_KEY;
+
+  const response = await axios.get(proxyAddress, {
+    mode: "cors",
+  });
 
   return response.data;
 };
