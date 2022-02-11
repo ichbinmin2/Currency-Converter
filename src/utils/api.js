@@ -1,9 +1,8 @@
 import axios from "axios";
+import { EXCHANGE_API_URL } from "./constants";
 
 export const getApi = async () => {
-  const response = await axios.get(
-    `http://api.currencylayer.com/live?access_key=${process.env.REACT_APP_CURRENCYLAYER_API_KEY}`
-  );
+  const response = await axios.get(EXCHANGE_API_URL);
 
   return response.data;
 };
