@@ -1,4 +1,10 @@
-# 💵 Currency Exchange Converter
+# ✔️ 원티드 프리 온보딩 - Currency Exchange Converter
+
+## 와이어바알리/레드브릭
+
+<img width="250" alt="redbrick" src="https://user-images.githubusercontent.com/53133662/153596609-11c076d4-934b-43b3-b002-b0652f2ddd64.png">
+<img width="250" alt="redbrick" src="https://user-images.githubusercontent.com/53133662/153596614-d770c2d9-e4f4-4c53-b3bf-e73efacb8e5c.png">
+
 
 ## 프로젝트 소개
 
@@ -11,7 +17,7 @@ currencylayer API를 활용하여 Select Box 전환기와 Tab Select 전환기, 
 
 ## 배포 주소
 
-추후 추가 예정
+[배포 사이트 바로가기](https://onbasic-currency-converter.herokuapp.com/)
 
 ## 기능별 영상
 
