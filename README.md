@@ -72,9 +72,9 @@ src
 
 <br/>
 
-## ✅ 과제 주요 구현 내용
+## ✅ 과제 주요 구현 내용(민지연)
 
-### Select Box 전환기
+**Select Box 전환기**
 
 ![ezgif com-gif-maker - 2022-07-03T152845 645](https://user-images.githubusercontent.com/53133662/177027911-b980e2d3-7bb6-4dae-885e-67eeeb2931a7.gif)
 
