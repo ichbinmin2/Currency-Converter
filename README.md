@@ -1,62 +1,100 @@
-# ✔️ 원티드 프리 온보딩 - Currency Exchange Converter
+<h1 align="middle">2022 원티드 프리온보딩 프론트엔드 코스 기업과제</br>
+- 와이어바알리/레드브릭 </h1>
+<p align="middle">⚡️ React와 currencylayer API로 구현하는 환율 전환기 어플리케이션</p>
+<p align="middle">
+<img width="929" alt="image" src="https://user-images.githubusercontent.com/53133662/177027227-c8da508b-34a8-4adb-b0c4-864799063b50.png">
+</p>
 
-## 와이어바알리/레드브릭
+<br />
 
-<img width="250" alt="redbrick" src="https://user-images.githubusercontent.com/53133662/153596609-11c076d4-934b-43b3-b002-b0652f2ddd64.png">
-<img width="250" alt="redbrick" src="https://user-images.githubusercontent.com/53133662/153596614-d770c2d9-e4f4-4c53-b3bf-e73efacb8e5c.png">
+## 🔎 프로젝트 소개 ( [Demo](https://onbasic-currency-converter.herokuapp.com) )
 
-## 프로젝트 소개
+**currencylayer API를 이용한 환율 전환기 어플리케이션을 구현했습니다.**
 
-currencylayer API를 활용하여 **Select Box** 전환기와 **Tab Select** 전환기, 두 종류의 환율 전환기를 각각 동작하도록 구현하는 것을 목표로 하는 프로젝트입니다.
+currencylayer API를 이용하여 **Select Box** 환율 전환기 어플리케이션 입니다. open API를 이용하여 세 개(한국/일본/필리핀)의 나라의 실시간 환율 데이터를 받아와 자동으로 계산할 수 있도록 했습니다. 또한, 공통된 계산 기능 및 콤마 처리 등을 찾아서 다른 팀의 환율 구현기에 적용할 수 있도록 utils 를 최대한 이용하였고, 공공 API를 배포할 시에 발생하는 CORS error 이슈를 프록시 서버를 히로쿠로 배포하여 해당 서버에 API를 받아오는 방식으로 배포를 처리했습니다.  
 
-## 팀 Repo 링크 가기
+<br />
 
-["On-Basic" Repo 바로가기](https://github.com/On-Basic/Currency-Converter)
+## 📚 기술 스택
+
+| React.js |   SCSS   | 
+| :--------: |  :-----: |
+|  <img src="https://user-images.githubusercontent.com/21965795/176630651-1248191d-432c-45ac-b876-9e5ff54e36f9.png" width="100px" > |  <img src="https://user-images.githubusercontent.com/53133662/177027346-d634e99c-68b0-4c2d-8bd2-5aa35123580c.png"  width="100px"/>|
+
+<br />
 
 
-## 배포 주소
+## 프로젝트 구조 설명
 
-[배포 사이트 바로가기](https://onbasic-currency-converter.herokuapp.com/)
+````bash
+src
+├── App.css
+├── App.js
+├── App.test.js
+├── components
+│   ├── index.js
+│   └── secondconverter
+│       ├── Contents.jsx
+│       ├── Contents.scss
+│       ├── Header.jsx
+│       ├── Header.scss
+│       ├── Selectbox.jsx
+│       ├── Selectbox.scss
+│       ├── Tab.jsx
+│       ├── Tab.scss
+│       └── optionObject.js
+├── hooks
+│   └── useData.js
+├── index.css
+├── index.js
+├── pages
+│   ├── FirstConverter.jsx
+│   ├── FirstConverter.scss
+│   ├── Main.jsx
+│   ├── Main.scss
+│   ├── SecondConverter.jsx
+│   └── SecondConverter.scss
+├── styles
+│   ├── _colors.scss
+│   └── _mixin.scss
+└── utils
+    ├── api.js
+    ├── comma.js
+    ├── constants.js
+    └── date.js
+````
 
 <br/>
 
-## 과제 구현 목록
+## 📌 프로젝트 과정 및 이슈 처리를 담은 회고
+
+### [**프로젝트 회고 보러가기!**](https://velog.io/@ichbinmin2/원티드-프리온보딩-프론트엔드-과정-1차-과제-환율-계산기)
+
+<br/>
+
+## ✅ 과제 주요 구현 내용
 
 ### Select Box 전환기
 
-☑️ currencylayer API 데이터를 실시간으로 활용
+![ezgif com-gif-maker - 2022-07-03T152845 645](https://user-images.githubusercontent.com/53133662/177027911-b980e2d3-7bb6-4dae-885e-67eeeb2931a7.gif)
 
-☑️ select 에서 option 값(수취국가) 선택하여 저장하고, option 값(수취국가)수취국가에 따라 하단 환율값 변동 구현
+✓ currencylayer API 데이터를 실시간으로 활용
 
-☑️ Submit을 누르면 수취금액이 KRW, JPY, PHP 중 하나로 계산, 결과값 출력
+✓ select 에서 option 값(수취국가) 선택하여 저장하고, option 값(수취국가)수취국가에 따라 하단 환율값 변동 구현
 
-☑️ utils 활용해 환율과 수취금액 소숫점 2째자리까지, 3자리 이상 되면 콤마(,) 처리
+✓ Submit을 누르면 수취금액이 KRW, JPY, PHP 중 하나로 계산, 결과값 출력
 
-☑️ 수취금액을 입력하지 않거나, 0보다 작은 금액이거나 10,000 USD보다 큰 금액, 혹은 바른 숫자가 아니라면 “송금액이 바르지 않습니다"라는 에러 메시지를 alert 창으로 띄우도록 처리
+✓ utils 활용해 환율과 수취금액 소숫점 2째자리까지, 3자리 이상 되면 콤마(,) 처리
 
-☑️ proxy 서버(cors-anywher)를 기반으로 한 Heroku 배포
+✓ 조건식에 따른 input 값이 올바르지 않을 경우 “송금액이 바르지 않습니다"라는 에러 메시지를 alert 창으로 띄우도록 처리
+
+✓ 수취금액을 입력하지 않거나, 0보다 작은 금액이거나 10,000 USD보다 큰 금액, 혹은 바른 숫자가 아니라면 “송금액이 바르지 않습니다"라는 에러 메시지를 alert 창으로 띄우도록 처리
+
+✓ proxy 서버(cors-anywher)를 기반으로 한 Heroku 배포
 
 <br/>
 
-## 기능별 영상
-
-### Select Box 전환기(민지연)
-
-- 실시간으로 currencylayer API data를 받아온 뒤 select 된 option 값(나라)에 따른 환율값 실시간 변동 구현
-- utils 활용해 환율과 수취금액 소숫점 2째자리까지, 3자리 이상 되면 콤마(,) 처리
-<br/>
-
-<img src="https://user-images.githubusercontent.com/53133662/151083076-0cad58cc-a165-47fb-a38b-8590f1ab2813.gif">
-<br/>
-
-- 조건식에 따른 input 값이 올바르지 않을 경우 “송금액이 바르지 않습니다"라는 에러 메시지를 alert 창으로 띄우도록 처리
-<br/>
-
-<img src="https://user-images.githubusercontent.com/53133662/151083796-51247a9a-ecad-45f0-b104-4d31f15719bb.png">
-<br/>
-
-
-## 추가 리팩토링 : [CORS Anywhere와 Heroku로 프록시 서버를 생성하고 배포하기 (update : 2/11)](https://velog.io/@ichbinmin2/원티드-프리온보딩-프론트엔드-과정-1차-과제-환율-계산기)
+## ✍🏻 추가 리팩토링 : [CORS Anywhere와 Heroku로 프록시 서버를 생성하고 배포하기 (update : 2/11)](https://velog.io/@ichbinmin2/원티드-프리온보딩-프론트엔드-과정-1차-과제-환율-계산기)
 
 첫번째 과제를 배포하지 못한 게 계속 마음에 걸렸던 터라 시간적 여유가 생기자마자 혼자서라도 배포를 시도 해보기로 했다. 이전에 Heroku로 배포를 해본 상태였기 때문에 [(세번째 과제 회고 보러가기)](https://velog.io/@ichbinmin2/원티드-프리온보딩-프론트엔드-과정-3차-과제-견적-요청-페이지) 동일한 방식으로 배포를 하면 될 것이라 생각하고 바로 배포를 진행하게 되었다. 
 
@@ -138,43 +176,15 @@ export const getApi = async () => {
 
 이렇게 cors-anywhere를 이용하여 간단하게 proxy 서버를 구축하고, cors 에러 없이 성공적으로 배포를 완료할 수 있었다. 
 
-> [⚡️ 배포한 사이트 바로가기!](https://onbasic-currency-converter.herokuapp.com/)
-
 </br>
 
-## 프로젝트 구조 설명
+## 👯‍♀️ 팀 Repo 링크 가기
 
-````bash
-├── node_modules
-├── .github
-├── public
-│   └── index.html
-├── src
-│   ├── components
-│   │   └── componentName
-│   ├── costants
-│   ├── hooks
-│   ├── pages
-│   ├── styles
-│   └── utils
-│
-├── .gitignore
-├── package-lock.json
-├── package.json
-└── README.md```
+["On-Basic" Repo 바로가기](https://github.com/On-Basic/Currency-Converter)
+<br />
 
 
-````
-
-<br/>
-
-## 프로젝트 후기
-
-### [✍🏻 프로젝트 회고 보러가기!](https://velog.io/@ichbinmin2/원티드-프리온보딩-프론트엔드-과정-1차-과제-환율-계산기)
-
-<br/>
-
-## 설치 및 시작하는 법
+## 🖥 설치 및 시작하는 법
 
 **프로젝트 클론**
 
